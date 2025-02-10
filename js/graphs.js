@@ -59,8 +59,8 @@ function createXpGraphElement(xpTransactions) {
     });
 
     const yScale = 300 / cumulativeAmount;
-    const timeSpan = new Date(xpTransactions[xpTransactions.length - 1].createdAt).getTime() - new Date(xpTransactions[0].createdAt).getTime();
-    const xScale = 550 / timeSpan;
+    const timeSpan = new Date().getTime()  - new Date(xpTransactions[0].createdAt).getTime();
+    const xScale = 570 / timeSpan;
 
     let lasty = 350;
     let points = "";
@@ -93,7 +93,7 @@ function createXpGraphElement(xpTransactions) {
         const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         circle.setAttribute("cx", x);
         circle.setAttribute("cy", y);
-        circle.setAttribute("r", 2);
+        circle.setAttribute("r", 3);
         circle.setAttribute("fill", "#444cf7");
 
         const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
